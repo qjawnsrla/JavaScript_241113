@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        height: 300px;
+        width: 300px;
+        margin: 50px auto;
+        border-radius: 50%;
+        border: 2px solid #333333;
+        background-color: #d8f0fc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .accent {
+        font-size: 1.8em;
+        font-weight: bold;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>학원 수료</h1>
+      <p><span class="accent" id="daysRemaining"></span>일 남았습니다.</p>
+      <p>화이팅!!!!!</p>
+    </div>
+    <script>
+      const graduationDate = new Date("2025-03-24");
+      const currentDate = new Date();
+      const timeDifference = graduationDate - currentDate;
+      const daysLeft = Math.round(timeDifference / (1000 * 60 * 60 * 24));
+      document.querySelector("#daysRemaining").innerHTML = daysLeft;
+    </script>
+  </body>
+</html>
